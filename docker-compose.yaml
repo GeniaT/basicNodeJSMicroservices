@@ -1,0 +1,28 @@
+version: '3'    
+services:
+ books-app: 
+  build: ./books
+  image: books:V1
+  ports: 
+    - 4545:4545
+ orders-app: 
+  build: ./orders
+  image: orders:V1
+  ports: 
+    - 7777:7777
+ customers-app: 
+  build: ./customers
+  image: customers:V1
+  ports: 
+    - 5555:5555
+
+ mongo:
+    image: mongo
+    restart: always
+
+ mongo-express:
+    image: mongo-express
+    restart: always
+    ports:
+      - 8081:8081
+   
